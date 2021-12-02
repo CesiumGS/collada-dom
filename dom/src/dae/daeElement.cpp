@@ -20,6 +20,7 @@
 
 #include <limits>
 #include <iomanip>
+#include <algorithm>
 
 using namespace std;
 
