@@ -234,8 +234,10 @@ pkg_check_modules(liburiparser liburiparser)
 if(liburiparser_FOUND)
   set(liburiparser_CFLAGS_OTHERS "-DUSE_URIPARSER")
 else()
-  find_package(PCRE REQUIRED)
 
+if(NOT PCRE_FOUND)
+  find_package(PCRE REQUIRED)
+endif()
   # try using pcrecpp
   #pkg_check_modules(libpcrecpp libpcrecpp)
   #if( libpcrecpp_FOUND )
