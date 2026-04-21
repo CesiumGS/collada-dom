@@ -79,7 +79,7 @@ bool daeZAEUncompressHandler::retrieveRootURIFromManifest(const std::string& tmp
     // extract via libxml.
     bool error = false;
     std::string manifest_path = (fs::path(tmpDir) / MANIFEST_FILE_NAME).string();
-    xmlTextReaderPtr xmlReader = xmlReaderForFile(manifest_path.c_str(), NULL, 0);
+    xmlTextReaderPtr xmlReader = xmlReaderForFile(manifest_path.c_str(), NULL, XML_PARSE_NONET);
 
     if (xmlReader)
     {
